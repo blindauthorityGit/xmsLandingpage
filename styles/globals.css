@@ -21,3 +21,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.gradient {
+  background: rgb(49,69,81);
+background: linear-gradient(180deg, #14242B 0%, rgba(59,107,91,1) 22%, rgba(74,160,105,1) 100%);
+}
+.gradientBox {
+  background: rgb(75,161,105);
+  background: linear-gradient(265deg, rgba(75,161,105,1) 0%, rgba(158,210,106,1) 52%, rgba(237,255,122,1) 100%);}
