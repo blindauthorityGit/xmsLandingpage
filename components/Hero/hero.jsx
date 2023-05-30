@@ -13,13 +13,15 @@ const Hero = (props) => {
         >
             {/* Background Image */}
             <div className="text z-10 font-work">
-                <h1 className="text-9xl font-black text-accentColor-50">
+                <h1 className="text-7xl md:text-9xl font-black text-accentColor-50">
                     <span className="text-accentColor-500">GREEN</span>
                     <br />
                     YOUR WORLD
                 </h1>
                 <div className="w-full text-center mt-16">
-                    <MainButton accent>Contact us</MainButton>
+                    <MainButton accent link={"/#contact"}>
+                        Contact us
+                    </MainButton>
                 </div>
             </div>
 

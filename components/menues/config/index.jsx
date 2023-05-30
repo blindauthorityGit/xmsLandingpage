@@ -2,12 +2,12 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const menuItems = [
     {
-        title: "Bäckerei",
-        slug: "baeckerei",
+        title: "Why",
+        slug: "#why",
         subMenu: false,
         subMenuItems: [
             {
-                title: "Winterakademie 2023",
+                title: "Our Solition",
                 slug: "about",
             },
             {
@@ -26,18 +26,23 @@ const menuItems = [
         ],
     },
     {
-        title: "Denise",
-        slug: "denise",
+        title: "Our Solution",
+        slug: "#solution",
         subMenu: false,
     },
     {
-        title: "Weingebäck",
-        slug: "weingebaeck",
+        title: "Who is it for",
+        slug: "#who",
         subMenu: false,
     },
     {
-        title: "Kontakt",
-        slug: "kontakt",
+        title: "Features",
+        slug: "#features",
+        subMenu: false,
+    },
+    {
+        title: "Contact",
+        slug: "#contact",
         subMenu: false,
     },
 ];

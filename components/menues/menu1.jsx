@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, forwardRef } from "react";
 import Link from "next/link";
 import { BiChevronDown } from "react-icons/bi";
 import { useRouter } from "next/router";
+import { MainButton } from "../buttons";
 
 import { Newsletter } from "../menues";
 
@@ -143,11 +144,14 @@ const Menu1 = (props) => {
 
     return (
         <>
-            <nav ref={navRef} className={`w-full  fixed z-30 px-4 sm:px-12 xl:px-12 lg:py-2 xl:py-4  ${props.colspan}`}>
+            <nav
+                ref={navRef}
+                className={`w-full  absolute z-30 px-4 sm:px-12 xl:px-12 lg:py-2 xl:py-4  ${props.colspan}`}
+            >
                 {/* BG */}
                 <div className=" z-30 grid containerXL 2xl:mx-auto 2xl:px-8 relative grid-cols-12 m-auto items-center  py-3 sm:py-4 lg:px-0 lg:py-0">
                     {/* Background Image */}
-                    <div className="logo col-span-4 md:col-span-2 ">
+                    <div className="logo col-span-4 md:col-span-1 ">
                         <Link href="/">
                             <a className="flex">
                                 <img
@@ -158,7 +162,7 @@ const Menu1 = (props) => {
                             </a>
                         </Link>
                     </div>
-                    <div className="col-span-7 md:col-span-9 ">
+                    <div className="col-span-6 md:col-span-9 ">
                         <ul className="hidden font-barlow lg:flex items-center list-style-none justify-end pr-8">
                             {props.menuItems.map((e, i) => {
                                 return (
@@ -169,7 +173,7 @@ const Menu1 = (props) => {
                                         key={`menuKey${i}`}
                                         className={`relative mx-8 py-4 font-montserrat tracking-widest font-semibold 
                                        
-                                         ${isScrolled ? "text-darkText" : "text-white"}  hover:text-primaryColor-500`}
+                                         ${isScrolled ? "text-white" : "text-white"}  hover:text-primaryColor-500`}
                                         onMouseEnter={(e) => {
                                             onEnter(e);
                                         }}
@@ -215,7 +219,7 @@ const Menu1 = (props) => {
                             <Newsletter onClick={props.onClick}></Newsletter>
                         </ul> */}
                     </div>
-                    <div className="col-span-1 social media flex justify-end text-xl md:text-4xl">
+                    <div className="col-span-2 social media flex justify-end text-xl md:text-4xl">
                         <div
                             className={`block lg:hidden cursor-pointer ${
                                 isScrolled ? "text-darkText" : "text-primaryColor-100"
@@ -224,10 +228,11 @@ const Menu1 = (props) => {
                                 setShowOverlay(true);
                             }}
                         >
-                            {props.burgerIcon}
+                            <MainButton link={"https://tree-donator.vercel.app"}>DEMO</MainButton>
                         </div>
                         <div className="hidden lg:flex ">
-                            {props.socialMedia.map((e, i) => {
+                            <MainButton link={"https://tree-donator.vercel.app"}>DEMO</MainButton>
+                            {/* {props.socialMedia.map((e, i) => {
                                 return (
                                     <a
                                         className={`mr-4 text-lg ${
@@ -240,7 +245,7 @@ const Menu1 = (props) => {
                                         {e.icon}
                                     </a>
                                 );
-                            })}
+                            })} */}
                         </div>
                     </div>
                     {/* <div className="relative top-[1000%] w-full h-24 bg-red-500" ref={ref}></div> */}
