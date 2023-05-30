@@ -19,11 +19,7 @@ import LogoDark from "../assets/logoLight.svg";
 import TreeBox from "../assets/treeBox.svg";
 import Birb from "../assets/bird.svg";
 import Mockup from "../assets/mockup.png";
-import Community from "../assets/svg/community.svg";
-import Donation from "../assets/svg/donation.svg";
-import Location from "../assets/svg/location.svg";
-import Tracking from "../assets/svg/tracking.svg";
-import Safe from "../assets/svg/safe.svg";
+
 import Screenshot from "../assets/screenshot.jpg";
 import ContactTrees from "../assets/contactTrees.svg";
 
@@ -158,7 +154,7 @@ export default function Home() {
                         <div className="col-span-12 md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
                             <img src={Mockup.src} alt="" />
                         </div>
-                        <div className="col-span-12 flex justify-evenly hidden">
+                        {/* <div className="col-span-12 flex justify-evenly hidden">
                             <div className="w-36">
                                 <img src={Location.src} alt="" />
                             </div>
@@ -174,7 +170,7 @@ export default function Home() {
                             <div className="w-36">
                                 <img src={Donation.src} alt="" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* //FOURTH */}
                     <QuestionClicker
