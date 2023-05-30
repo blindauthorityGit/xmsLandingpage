@@ -223,7 +223,7 @@ export default function Home() {
                         <div className="h-16 md:h-32 col-span-12"></div>
 
                         <div className="col-span-12 grid grid-cols-12">
-                            <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pl-24">
+                            <div className="col-span-12 px-8 md:px-0 md:col-span-6 md:order-last relative md:pl-24">
                                 <h3 className="opacity-100 font-bold mt-8 font-work text-3xl text-white">
                                     Fully Customizable Dashboard
                                 </h3>
