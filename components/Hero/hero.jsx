@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroImg from "../../assets/hero.jpg";
 
 import { MainButton } from "../buttons";
 import { Parallax } from "react-scroll-parallax";
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = (props) => {
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+        });
+    }, []);
+
     return (
         <div
             className={`hero-container relative flex justify-center items-center w-full ${
@@ -12,11 +21,16 @@ const Hero = (props) => {
             } ${props.colspan}`}
         >
             {/* Background Image */}
-            <div className="text z-10 font-work">
+            <div className="text z-10 font-work px-8 lg:px-0">
                 <h1 className="text-7xl md:text-9xl font-black text-accentColor-50">
-                    <span className="text-accentColor-500">GREEN</span>
+                    <span data-aos="zoom-in-left" data-aos-delay="300" className="text-accentColor-500">
+                        GREEN
+                    </span>
                     <br />
-                    YOUR WORLD
+                    <span data-aos="zoom-in-right" data-aos-delay="500">
+                        {" "}
+                        YOUR WORLD
+                    </span>
                 </h1>
                 <div className="w-full text-center mt-16">
                     <MainButton accent link={"/#contact"}>

@@ -224,11 +224,10 @@ const Menu1 = (props) => {
                             className={`block lg:hidden cursor-pointer ${
                                 isScrolled ? "text-darkText" : "text-primaryColor-100"
                             }`}
-                            onClick={(e) => {
-                                setShowOverlay(true);
-                            }}
                         >
-                            <MainButton link={"https://tree-donator.vercel.app"}>DEMO</MainButton>
+                            <a className="text-white tracking-widest" link={"https://tree-donator.vercel.app"}>
+                                DEMO
+                            </a>
                         </div>
                         <div className="hidden lg:flex ">
                             <MainButton link={"https://tree-donator.vercel.app"}>DEMO</MainButton>

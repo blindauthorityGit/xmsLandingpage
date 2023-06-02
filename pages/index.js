@@ -32,7 +32,7 @@ export default function Home() {
 
     useEffect(() => {
         AOS.init({
-            duration: 1200,
+            duration: 400,
         });
     }, []);
 
@@ -75,12 +75,16 @@ export default function Home() {
                         </h2>
                     </div>
                     {/* //SECOND */}
-                    <div className="second mt-16 col-span-12 grid grid-cols-12 gradientBox rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[15rem]">
+                    <div className="second mt-16 col-span-12 grid grid-cols-12 gradientBox rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[8rem] md:rounded-br-[15rem]">
                         <div className="col-span-12 md:col-span-6 relative">
-                            <div className="mt-[2rem] mb-12 absolute right-[1rem] top-[-6rem] md:right-[-4rem]">
+                            <div
+                                data-aos="zoom-in-down"
+                                data-aos-delay="300"
+                                className="mt-[2rem] w-[7rem] md:w-auto mb-12 absolute right-[1rem] top-[-6rem] md:right-[-4rem]"
+                            >
                                 <img src={Birb.src} alt="" />
                             </div>
-                            <div className="flex justify-center mt-[-4rem] mb-12">
+                            <div data-aos="zoom-in-up" className="flex justify-center mt-[-4rem] mb-12">
                                 <img src={TreeBox.src} alt="" />
                             </div>
                         </div>
@@ -151,7 +155,7 @@ export default function Home() {
                                 impact on the planet one tree at a time.
                             </p>
                         </div>
-                        <div className="col-span-12 md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
+                        <div className="col-span-12 hidden md_block md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
                             <img src={Mockup.src} alt="" />
                         </div>
                         {/* <div className="col-span-12 flex justify-evenly hidden">
@@ -193,7 +197,7 @@ export default function Home() {
                     ></QuestionClicker>
                     {/* //fifth */}
                 </div>{" "}
-                <div className="w-full bg-darkColor-500 col-span-12 py-24 mt-36 " id="features">
+                <div className="w-full bg-darkColor-500 col-span-12 py-16 md:py-24 mt-16 md:mt-36 " id="features">
                     <div className="second col-span-12 grid grid-cols-12 container mx-auto">
                         <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
                             <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
@@ -297,7 +301,7 @@ export default function Home() {
                         {/* <div className="mt-[2rem] mb-12 absolute right-[-4rem]">
                             <img src={Birb.src} alt="" />
                         </div> */}
-                        <div className="flex justify-center mt-[-4rem] mb-0 md:mb-12">
+                        <div data-aos="zoom-in-up" className="flex justify-center mt-[-4rem] mb-0 md:mb-12">
                             <img src={ContactTrees.src} alt="" />
                         </div>
                     </div>
