@@ -23,16 +23,16 @@ const Hero = (props) => {
             {/* Background Image */}
             <div className="text z-10 font-work px-8 lg:px-0">
                 <h1 className="text-7xl md:text-9xl font-black text-accentColor-50">
-                    <span data-aos="zoom-in-left" data-aos-delay="300" className="text-accentColor-500">
+                    <div data-aos="zoom-in-left" data-aos-delay="300" className="text-accentColor-500">
                         GREEN
-                    </span>
-                    <br />
-                    <span data-aos="zoom-in-right" data-aos-delay="500">
+                    </div>
+
+                    <div data-aos="zoom-in-right" data-aos-delay="500">
                         {" "}
                         YOUR WORLD
-                    </span>
+                    </div>
                 </h1>
-                <div className="w-full text-center mt-16">
+                <div className="w-full text-center mt-16" data-aos="zoom-in-up" data-aos-delay="700">
                     <MainButton accent link={"/#contact"}>
                         Contact us
                     </MainButton>

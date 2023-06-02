@@ -254,7 +254,7 @@ export default function Home() {
                                 <img src={Screenshot.src} alt="" />
                             </div>
                         </div>
-                        <div className="h-32 col-span-12"></div>
+                        <div className="h-16 md:h-32 col-span-12"></div>
                         <div className="col-span-12 grid grid-cols-12">
                             <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
                                 <h3 className="opacity-100 font-bold mt-8 font-work text-3xl text-white">
@@ -295,7 +295,7 @@ export default function Home() {
                 {/* //SECOND */}
                 <div
                     id="contact"
-                    className="second mb-36 mt-16 container mx-auto col-span-12 grid grid-cols-12 gradientBox rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+                    className="second mb-16 mt-16 container mx-auto col-span-12 grid grid-cols-12 gradientBox rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
                 >
                     <div className="col-span-12 md:col-span-6 relative">
                         {/* <div className="mt-[2rem] mb-12 absolute right-[-4rem]">
@@ -305,7 +305,7 @@ export default function Home() {
                             <img src={ContactTrees.src} alt="" />
                         </div>
                     </div>
-                    <div className="col-span-12 md:col-span-6 p-16 flex flex-col justify-end pb-24">
+                    <div className="col-span-12 md:col-span-6 p-8 md:p-16 flex flex-col justify-end pb-24">
                         <h2 className="font-work text-3xl font-bold text-white leading-tight ">Contact us!</h2>
                         <div className="w-full md:w-2/3">
                             <p className="mt-8 font-work text-lg mb-16">
@@ -314,6 +314,14 @@ export default function Home() {
                             <Form1></Form1>
                         </div>
                     </div>
+                </div>
+                <div className="col-span-12 flex justify-center mb-36">
+                    <a
+                        className="text-white underline hover:text-primaryColor-800"
+                        href="https://tree-donator.vercel.app"
+                    >
+                        Check out our DEMO
+                    </a>
                 </div>
             </div>
         </MainContainer>
