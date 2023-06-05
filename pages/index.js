@@ -19,6 +19,9 @@ import LogoDark from "../assets/logoLight.svg";
 import TreeBox from "../assets/treeBox.svg";
 import Birb from "../assets/bird.svg";
 import Mockup from "../assets/mockup.png";
+import Frontend from "../assets/frontend.jpg";
+import Dashboard from "../assets/dashboard.jpg";
+import Payment from "../assets/payment.jpg";
 
 import Screenshot from "../assets/screenshot.jpg";
 import ContactTrees from "../assets/contactTrees.svg";
@@ -155,7 +158,7 @@ export default function Home() {
                                 impact on the planet one tree at a time.
                             </p>
                         </div>
-                        <div className="col-span-12 hidden md_block md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
+                        <div className="col-span-12 hidden md:block md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
                             <img src={Mockup.src} alt="" />
                         </div>
                         {/* <div className="col-span-12 flex justify-evenly hidden">
@@ -222,7 +225,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
-                            <img src={Screenshot.src} alt="" />
+                            <img src={Frontend.src} alt="" />
                         </div>
                         <div className="h-16 md:h-32 col-span-12"></div>
 
@@ -251,7 +254,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
-                                <img src={Screenshot.src} alt="" />
+                                <img src={Dashboard.src} alt="" />
                             </div>
                         </div>
                         <div className="h-16 md:h-32 col-span-12"></div>
@@ -277,7 +280,7 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
-                                <img src={Screenshot.src} alt="" />
+                                <img src={Payment.src} alt="" />
                             </div>
                         </div>
                     </div>
