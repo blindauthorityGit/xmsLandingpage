@@ -22,6 +22,8 @@ import Mockup from "../assets/mockup.png";
 import Frontend from "../assets/frontend.jpg";
 import Dashboard from "../assets/dashboard.jpg";
 import Payment from "../assets/payment.jpg";
+import Favicon from "../assets/favicon.svg";
+import HeroImg from "../assets/hero.jpg";
 
 import Screenshot from "../assets/screenshot.jpg";
 import ContactTrees from "../assets/contactTrees.svg";
@@ -52,7 +54,28 @@ export default function Home() {
     return (
         <MainContainer width="">
             <Head>
-                <title>Site title</title>
+                <title>Tree Donator - green your world</title>
+                <meta
+                    name="description"
+                    content="Experience the joy of making a difference with our easy and fun tree donation system.
+                                Our platform allows you to select a specific location where a tree will be planted,
+                                giving you a personal connection to your contribution."
+                />
+                {/* <meta name="keywords" content={dataBaeckerei.seo.mainSEO.keywords.map((e) => e)} /> */}
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" href={Favicon.src} />
+                <meta property="og:title" content="Tree Donator - green your world" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://treedonator.sabocon.com" />
+                <meta property="og:image" content={HeroImg.src} />
+                <meta
+                    property="og:description"
+                    content="Experience the joy of making a difference with our easy and fun tree donation system.
+                    Our platform allows you to select a specific location where a tree will be planted,
+                    giving you a personal connection to your contribution."
+                />
+                <meta property="og:site_name" content="Tree Donator - green your world" />
+                <meta property="og:locale" content="en_EN" />
             </Head>
             <Menu1
                 logoLight={LogoLight.src}
