@@ -62,28 +62,24 @@ export default function Home() {
     return (
         <MainContainer width="">
             <Head>
-                <title>Tree Donator - green your world</title>
+                <title>XMS Donate - Spenden, dekorieren, Hoffnung schenken</title>
                 <meta
                     name="description"
-                    content="Experience the joy of making a difference with our easy and fun tree donation system.
-                                Our platform allows you to select a specific location where a tree will be planted,
-                                giving you a personal connection to your contribution."
+                    content="Lassen Sie Ihre Spende auf unserem virtuellen Spendenbaum erstrahlen"
                 />
                 {/* <meta name="keywords" content={dataBaeckerei.seo.mainSEO.keywords.map((e) => e)} /> */}
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href={Favicon.src} />
-                <meta property="og:title" content="Tree Donator - green your world" />
+                <meta property="og:title" content="XMS Donate - Spenden, dekorieren, Hoffnung schenken" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://treedonator.sabocon.com" />
+                <meta property="og:url" content="https://www.xmsdonate.de" />
                 <meta property="og:image" content={HeroImg.src} />
                 <meta
                     property="og:description"
-                    content="Experience the joy of making a difference with our easy and fun tree donation system.
-                    Our platform allows you to select a specific location where a tree will be planted,
-                    giving you a personal connection to your contribution."
+                    content="Lassen Sie Ihre Spende auf unserem virtuellen Spendenbaum erstrahlen."
                 />
-                <meta property="og:site_name" content="Tree Donator - green your world" />
-                <meta property="og:locale" content="en_EN" />
+                <meta property="og:site_name" content="XMS Donate - Spenden, dekorieren, Hoffnung schenken" />
+                <meta property="og:locale" content="de_DE" />
             </Head>
             <Menu1
                 logoLight={LogoLight.src}
