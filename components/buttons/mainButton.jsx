@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const MainButton = (props) => {
     return (
-        <Link href={props.link}>
-            <a>
+        <Link href={props.link} className={props.klasse}>
+            <a className={props.klasse}>
                 <button
                     type={props.type}
                     onClick={props.onClick}

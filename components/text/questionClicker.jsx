@@ -11,8 +11,8 @@ function QuestionClicker({ data }) {
     return (
         <div className="second col-span-12 grid grid-cols-12 mt-16 md:mt-36" id="who">
             <div className="col-span-12">
-                <h2 className="font-work text-6xl mb-8 text-center font-bold text-accentColor leading-tight ">
-                    Who is it for
+                <h2 className="font-work text-3xl lg:text-5xl mb-8 text-center font-bold text-accentColor leading-tight ">
+                    Für wen ist es gedacht?
                 </h2>
             </div>
             <div className="col-span-12 px-8 md:px-0 md:col-span-4 relative">

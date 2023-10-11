@@ -11,22 +11,30 @@ import { QuestionClicker } from "../components/text";
 import { Form1 } from "../components/forms";
 import { Parallax } from "react-scroll-parallax";
 
+import SwiperComp from "../components/swiper";
+import { MainButton } from "../components/buttons";
+
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoLight.svg";
 import TreeBox from "../assets/treeBox.svg";
+import Presents from "../assets/presents.png";
 import Birb from "../assets/bird.svg";
 import Mockup from "../assets/mockup.png";
 import Frontend from "../assets/frontend.jpg";
 import Dashboard from "../assets/dashboard.jpg";
+import Tree from "../assets/tree.png";
 import Payment from "../assets/payment.jpg";
 import Favicon from "../assets/favicon.svg";
 import HeroImg from "../assets/hero.jpg";
+import Img1 from "../assets/1.jpg";
+import Img2 from "../assets/2.jpg";
+import Img3 from "../assets/3.jpg";
 
 import Screenshot from "../assets/screenshot.jpg";
-import ContactTrees from "../assets/contactTrees.svg";
+import ContactTrees from "../assets/contact.png";
 
 // AOS
 import AOS from "aos";
@@ -88,49 +96,175 @@ export default function Home() {
                     setIsOpen(true);
                 }}
             ></Menu1>
-            <Hero fullHeight={true} colspan="col-span-12">
-                BUBU
-            </Hero>
-            <div className="w-full col-span-12 gradient" id="why">
+            <Hero fullHeight={true} colspan="col-span-12"></Hero>
+            <div className="w-full col-span-12 " id="why">
                 <div className="container mx-auto grid grid-cols-12 relative">
                     {/* //FIRST */}
-                    <div className="first col-span-12 text-center mt-16 mb-16">
-                        <h2 className="font-work text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor leading-tight ">
-                            <span className="text-white">Change the World, One Tree at a Time</span>
-                            <br /> Donate Easily and Securely{" "}
+                    <div className="first col-span-12 lg:col-span-6 px-8 mt-16 mb-16 lg:pr-24">
+                        <h2 className="font-work text-3xl md:px-0 md:text-5xl font-bold text-accentColor leading-tight ">
+                            <span className="text-primaryColor">Deine Charity, dein Baum, deine Wirkung</span>
                         </h2>
+                        <p className="font-work text-lg text-whiteText mt-16 mb-8">
+                            Willkommen auf unserer Spendenplattform zur Weihnachtszeit, wo der Geist der Großzügigkeit
+                            auf die Magie der Saison trifft. Mit unserer einzigartigen Web-App haben Sie die
+                            Möglichkeit, einen Unterschied zu bewirken, der ebenso persönlich wie bedeutsam ist. Sie
+                            wählen die Wohltätigkeitsorganisation aus, die Ihr Herz berührt, und wir gestalten einen
+                            wunderschönen virtuellen Weihnachtsbaum nur für Sie.
+                        </p>
+                        <p className="font-work text-lg text-whiteText mt-16 mb-8">
+                            Dann laden Sie Besucher ein, Ihren Baum mit digitalen Ornamenten zu schmücken, die ihre
+                            Spenden repräsentieren. Es ist eine herzerwärmende Möglichkeit, Ihre Gemeinschaft
+                            zusammenzubringen, die Saison zu feiern und echte Wirkung für die Anliegen zu erzielen, die
+                            Ihnen am Herzen liegen.
+                        </p>
+                        <p className="font-work text-lg text-whiteText">
+                            Schließen Sie sich uns an und verbreiten Sie Freude, Ornament für Ornament.
+                        </p>
                     </div>
-                    {/* //SECOND */}
-                    <div className="second mt-16 col-span-12 grid grid-cols-12 gradientBox rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[8rem] md:rounded-br-[15rem]">
-                        <div className="col-span-12 md:col-span-6 relative">
-                            <div
-                                data-aos="zoom-in-down"
-                                data-aos-delay="300"
-                                className="mt-[2rem] w-[7rem] md:w-auto mb-12 absolute right-[1rem] top-[-6rem] md:right-[-4rem]"
-                            >
-                                <img src={Birb.src} alt="" />
-                            </div>
-                            <div data-aos="zoom-in-up" className="flex justify-center mt-[-4rem] mb-12">
-                                <img src={TreeBox.src} alt="" />
+                    <div
+                        className="first col-span-12 px-8  lg:col-span-6 text-center lg:t-16 mb-16"
+                        data-aos="zoom-in-right"
+                        data-aos-delay="300"
+                    >
+                        <img src={Presents.src} alt="" />
+                    </div>
+                    <div className="col-span-12 grid grid-cols-12 gap-8">
+                        <div className="col-span-12 lg:col-span-4">
+                            <div className="rounded-2xl font-work ">
+                                <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
+                                    Individuelle Spenden
+                                </div>
+                                <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
+                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <ul className="list-disc mt-8">
+                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
+                                        <li className="mb-4">
+                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
+                                            Ihre Sache
+                                        </li>
+                                        <li className="mb-4">
+                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
+                                            Wohltätigkeitsorganisation an
+                                        </li>
+                                        <li className="mb-4">
+                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-span-12 md:col-span-6 px-8 md:p-16 flex flex-col justify-end pb-24">
-                            <h2 className="font-work text-3xl font-bold text-white leading-tight ">
-                                <span className="text-white">Why You Should Plant a Tree Today: </span>
-                                <br /> A Simple Way to Make a Difference{" "}
-                            </h2>
-                            <div className="w-full md:w-2/3">
-                                <p className="mt-8 font-work text-lg">
-                                    Planting a tree is a simple yet impactful way to make a difference in your local
-                                    environment. Trees provide numerous benefits, such as shade, cleaner air, and
-                                    natural beauty. Whether you plant a tree in your own backyard or donate to
-                                    organizations that plant trees in urban areas or reforestation efforts, you can help
-                                    make the world a greener place.
+                        <div className="col-span-12 lg:col-span-4">
+                            {" "}
+                            <div className="rounded-2xl font-work ">
+                                <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
+                                    Individuelle Spenden
+                                </div>
+                                <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
+                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <ul className="list-disc mt-8">
+                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
+                                        <li className="mb-4">
+                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
+                                            Ihre Sache
+                                        </li>
+                                        <li className="mb-4">
+                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
+                                            Wohltätigkeitsorganisation an
+                                        </li>
+                                        <li className="mb-4">
+                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-span-12 lg:col-span-4">
+                            {" "}
+                            <div className="rounded-2xl font-work ">
+                                <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
+                                    Individuelle Spenden
+                                </div>
+                                <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
+                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <ul className="list-disc mt-8">
+                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
+                                        <li className="mb-4">
+                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
+                                            Ihre Sache
+                                        </li>
+                                        <li className="mb-4">
+                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
+                                            Wohltätigkeitsorganisation an
+                                        </li>
+                                        <li className="mb-4">
+                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* //SECOND */}
+
+                    <div className="first col-span-12 px-8 lg:col-span-6 text-center mt-16 lg:mb-16">
+                        <img src={Tree.src} alt="" />
+                    </div>
+                    <div className="first px-8 lg:px-0 col-span-12 lg:col-span-6  mt-24 mb-16 font-work">
+                        <div className="first lg:ml-[-10rem]" data-aos="zoom-in-down">
+                            <div className="holder flex items-center">
+                                <span className="text-primaryColor text-8xl font-bold mr-8">1.</span>
+                                <div className="text text-whiteText text-4xl tracking-wider font-semibold">
+                                    Wählen Sie eine Charity
+                                </div>
+                            </div>
+                            <div className="descr lg:pl-36">
+                                <p className="font-work text-lg text-whiteText mt-8 mb-8">
+                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
+                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
+                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="first lg:ml-[-6rem]" data-aos="zoom-in-down">
+                            <div className="holder flex items-center">
+                                <span className="text-primaryColor text-8xl font-bold mr-8">2.</span>
+                                <div className="text text-whiteText text-4xl tracking-wider font-semibold">
+                                    Wählen Sie eine Charity
+                                </div>
+                            </div>
+                            <div className="descr lg:pl-36">
+                                <p className="font-work text-lg text-whiteText mt-8 mb-8">
+                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
+                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
+                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="first lg:ml-[-2rem]" data-aos="zoom-in-down">
+                            <div className="holder flex items-center">
+                                <span className="text-primaryColor text-8xl font-bold mr-8">3.</span>
+                                <div className="text text-whiteText text-4xl tracking-wider font-semibold">
+                                    Wählen Sie eine Charity
+                                </div>
+                            </div>
+                            <div className="descr lg:pl-36">
+                                <p className="font-work text-lg text-whiteText mt-8 mb-8">
+                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
+                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
+                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap col-span-12 justify-evenly mt-12">
+
+                    <div className="second lg:mt-16 col-span-12 text-center">
+                        <h2 className="font-work text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor lg:leading-loose">
+                            Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was
+                            am wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
+                        </h2>
+                    </div>
+                    {/* <div className="flex flex-wrap col-span-12 justify-evenly mt-12">
                         <PercentageCircle
                             text={"of of stormwater absorbed:"}
                             textSub={
@@ -155,9 +289,9 @@ export default function Home() {
                             color={"#74A26E"}
                             percentage={30}
                         />
-                    </div>
+                    </div> */}
                     {/* //THIRD */}
-                    <div className="second col-span-12 grid grid-cols-12 mt-12 md:mt-36" id="solution">
+                    {/* <div className="second col-span-12 grid grid-cols-12 mt-12 md:mt-36" id="solution">
                         <div className="col-span-12 md:col-span-4 px-8 md:px-0 relative">
                             <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
                                 Our Solution
@@ -184,24 +318,8 @@ export default function Home() {
                         <div className="col-span-12 hidden md:block md:col-span-8 px-8 md:px-0  md:mt-[-10rem] flex flex-col justify-end ">
                             <img src={Mockup.src} alt="" />
                         </div>
-                        {/* <div className="col-span-12 flex justify-evenly hidden">
-                            <div className="w-36">
-                                <img src={Location.src} alt="" />
-                            </div>
-                            <div className="w-36">
-                                <img src={Safe.src} alt="" />
-                            </div>
-                            <div className="w-36">
-                                <img src={Tracking.src} alt="" />
-                            </div>
-                            <div className="w-36">
-                                <img src={Community.src} alt="" />
-                            </div>
-                            <div className="w-36">
-                                <img src={Donation.src} alt="" />
-                            </div>
-                        </div> */}
-                    </div>
+           
+                    </div> */}
                     {/* //FOURTH */}
                     <QuestionClicker
                         data={{
@@ -213,7 +331,7 @@ export default function Home() {
                                 "Community and Neighborhood Groups",
                             ],
                             answers: [
-                                "Environmental organizations play a crucial role in advocating for nature conservation and reforestation efforts. By partnering with these organizations, your tree donation project can tap into their extensive networks of environmentally-conscious supporters.  Collaborating with them allows you to leverage their expertise and credibility to amplify your message. They can actively promote your platform through their communication channels, events, and campaigns, reaching a wider audience of like-minded individuals who are already engaged in environmental causes.",
+                                "Gemeinnützige Organisationen können unsere Plattform nutzen, um ansprechende Fundraising-Kampagnen zu erstellen.Sie können sich problemlos mit ihren Unterstützern vernetzen, ihre Anliegen präsentieren und Spenden sammeln, während sie Weihnachtsfreude verbreiten.",
                                 "Nature enthusiasts are individuals who deeply value the beauty and importance of the natural world. They often seek out opportunities to actively contribute to environmental causes. Your project can capture their attention and inspire them to make a difference. Highlight the personal connection they can establish by selecting the placement of their tree donations. Emphasize the positive impact that their contributions will have on preserving and restoring ecosystems. Engaging with nature-focused communities, such as outdoor enthusiasts, hikers, and nature photographers, can further enhance the reach and impact of your platform.",
                                 "Schools and educational institutions provide an ideal platform to promote environmental awareness and engage students in meaningful activities. Collaborating with them allows you to integrate your tree donation project into their curriculum or extracurricular programs. By demonstrating the educational value of tree planting and the importance of environmental stewardship, you can inspire and empower the next generation to become environmental advocates. Create tailored resources for educators, such as lesson plans or workshops, to facilitate their involvement in the project. Additionally, consider organizing tree planting events or competitions specifically targeting students, fostering a sense of responsibility and connection to the environment.",
                                 "Many businesses and corporations recognize the importance of incorporating sustainability into their operations. CSR programs offer opportunities for companies to align their values with impactful initiatives. Position your tree donation project as a CSR solution, emphasizing the positive environmental outcomes and employee engagement opportunities. Present case studies showcasing the social and environmental benefits of corporate tree planting campaigns. Collaborate with businesses to design customized programs that align with their sustainability goals, creating a win-win scenario where they contribute to tree planting efforts while enhancing their brand reputation.",
@@ -225,9 +343,11 @@ export default function Home() {
                 </div>{" "}
                 <div className="w-full bg-darkColor-500 col-span-12 py-16 md:py-24 mt-16 md:mt-36 " id="features">
                     <div className="second col-span-12 grid grid-cols-12 container mx-auto">
-                        <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
+                        <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">Beispiele</h2>
+                        <SwiperComp data={[Img1, Img2, Img3, Img1, Img2, Img3]}></SwiperComp>
+                        {/* <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
                             <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
-                                Features
+                                Beispiele
                             </h2>
                             <h3 className="opacity-100 font-bold mt-8 font-work text-3xl text-white">
                                 A Streamlined Frontend
@@ -246,8 +366,8 @@ export default function Home() {
                                 Discover the inspiring list of generous donors who have contributed to our mission,
                                 fostering a sense of community and shared environmental stewardship.
                             </p>
-                        </div>
-                        <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
+                        </div> */}
+                        {/* <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
                             <img src={Frontend.src} alt="" />
                         </div>
                         <div className="h-16 md:h-32 col-span-12"></div>
@@ -305,11 +425,20 @@ export default function Home() {
                             <div className="col-span-12 px-8 md:px-0 md:col-span-6 flex mt-8 md:mt-0 flex-col justify-end ">
                                 <img src={Payment.src} alt="" />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
+                <div className="second mt-16 col-span-12 text-center container mx-auto">
+                    <h2 className="font-work mb-12 text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor leading-loose">
+                        Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was am
+                        wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
+                    </h2>
+                    <MainButton klasse="mt-8" link={"https://tree-donator.vercel.app"}>
+                        DEMO
+                    </MainButton>
+                </div>
                 {/* //THIRD */}
-                <div className="second col-span-12 grid grid-cols-12 container mx-auto mt-36">
+                {/* <div className="second col-span-12 grid grid-cols-12 container mx-auto mt-36">
                     <div className="col-span-12 relative">
                         <h2 className="font-work text-center text-4xl md:text-6xl mb-8 font-bold text-accentColor leading-tight ">
                             We've Already planted <span className="text-8xl text-white">{trees}</span> Trees
@@ -317,7 +446,7 @@ export default function Home() {
                     </div>
 
                     <div className="col-span-12 flex justify-evenly"></div>
-                </div>
+                </div> */}
                 {/* //SECOND */}
                 <div
                     id="contact"
@@ -341,14 +470,14 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-12 flex justify-center mb-36">
+                {/* <div className="col-span-12 flex justify-center mb-36">
                     <a
                         className="text-white underline hover:text-primaryColor-800"
                         href="https://tree-donator.vercel.app"
                     >
                         Check out our DEMO
                     </a>
-                </div>
+                </div> */}
             </div>
         </MainContainer>
     );
