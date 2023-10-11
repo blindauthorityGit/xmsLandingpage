@@ -39,7 +39,9 @@ function QuestionClicker({ data }) {
                     return (
                         <p
                             key={`datab${i}`}
-                            className={`${i == active ? "block" : "hidden"} mt-8 font-work text-lg text-white`}
+                            className={`${
+                                i == active ? "block" : "hidden"
+                            } mt-8 font-work text-xl leading-relaxed text-white`}
                         >
                             {e}
                         </p>

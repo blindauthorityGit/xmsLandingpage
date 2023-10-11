@@ -157,22 +157,24 @@ export default function Home() {
                             {" "}
                             <div className="rounded-2xl font-work ">
                                 <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
-                                    Individuelle Spenden
+                                    Interaktives Spenden
                                 </div>
                                 <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
-                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <strong>Beziehen Sie Ihre Gemeinschaft mit ein</strong>
                                     <ul className="list-disc mt-8">
-                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
                                         <li className="mb-4">
-                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
-                                            Ihre Sache
+                                            Laden Sie Freunde, Familie und Kollegen ein, Ihren Baum zu schmücken
                                         </li>
                                         <li className="mb-4">
-                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
-                                            Wohltätigkeitsorganisation an
+                                            Jedes Ornament repräsentiert eine Spende für Ihre ausgewählte
+                                            Wohltätigkeitsorganisation
                                         </li>
                                         <li className="mb-4">
-                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                            Sehen Sie zu, wie der Baum zum Leben erwacht, wenn weitere Ornamente
+                                            hinzugefügt werden
+                                        </li>
+                                        <li className="mb-4">
+                                            Verwandeln Sie das Geben in ein gemeinsames, interaktives Erlebnis
                                         </li>
                                     </ul>
                                 </div>
@@ -182,22 +184,25 @@ export default function Home() {
                             {" "}
                             <div className="rounded-2xl font-work ">
                                 <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
-                                    Individuelle Spenden
+                                    Echte Wirkung
                                 </div>
                                 <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
-                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <strong>Verwandeln Sie Spenden in Ergebnisse</strong>
                                     <ul className="list-disc mt-8">
-                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
                                         <li className="mb-4">
-                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
-                                            Ihre Sache
+                                            Jedes Ornament symbolisiert echte finanzielle Unterstützung für Ihre Sache
                                         </li>
                                         <li className="mb-4">
-                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
-                                            Wohltätigkeitsorganisation an
+                                            Verfolgen Sie Spenden in Echtzeit und sehen Sie, wie der kollektive Einfluss
+                                            wächst.
                                         </li>
                                         <li className="mb-4">
-                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                            Verstärken Sie die Mission Ihrer Wohltätigkeitsorganisation mit der Kraft
+                                            des gemeinsamen Gebens
+                                        </li>
+                                        <li className="mb-4">
+                                            Schaffen Sie einen greifbaren Unterschied und bringen Sie Ihre Sache zum
+                                            Leben
                                         </li>
                                     </ul>
                                 </div>
@@ -207,7 +212,7 @@ export default function Home() {
 
                     {/* //SECOND */}
 
-                    <div className="first col-span-12 px-8 lg:col-span-6 text-center mt-16 lg:mb-16">
+                    <div className="first col-span-12 px-8 lg:col-span-6 text-center mt-16 lg:mb-16" id="solution">
                         <img src={Tree.src} alt="" />
                     </div>
                     <div className="first px-8 lg:px-0 col-span-12 lg:col-span-6  mt-24 mb-16 font-work">
@@ -230,14 +235,16 @@ export default function Home() {
                             <div className="holder flex items-center">
                                 <span className="text-primaryColor text-8xl font-bold mr-8">2.</span>
                                 <div className="text text-whiteText text-4xl tracking-wider font-semibold">
-                                    Wählen Sie eine Charity
+                                    Gestalten Sie Ihren eigenen Baum
                                 </div>
                             </div>
                             <div className="descr lg:pl-36">
                                 <p className="font-work text-lg text-whiteText mt-8 mb-8">
-                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
-                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
-                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
+                                    Mit unserer fachkundigen Unterstützung gestalten Sie einen virtuellen
+                                    Weihnachtsbaum, der einzigartig Ihrer Sache gehört. Personalisieren Sie ihn mit den
+                                    Farben und dem Branding Ihrer Wohltätigkeitsorganisation. Legen Sie Spendenziele
+                                    fest, wählen Sie die Dauer der Kampagne aus, und lassen Sie uns die Bereitstellung
+                                    auf unseren sicheren Servern übernehmen.{" "}
                                 </p>
                             </div>
                         </div>
@@ -245,14 +252,15 @@ export default function Home() {
                             <div className="holder flex items-center">
                                 <span className="text-primaryColor text-8xl font-bold mr-8">3.</span>
                                 <div className="text text-whiteText text-4xl tracking-wider font-semibold">
-                                    Wählen Sie eine Charity
+                                    Sammeln Sie Spenden mit Freude
                                 </div>
                             </div>
                             <div className="descr lg:pl-36">
                                 <p className="font-work text-lg text-whiteText mt-8 mb-8">
-                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
-                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
-                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
+                                    Werben Sie für Ihren Baum und Ihre Kampagne bei Freunden, Familie und Unterstützern.
+                                    Sehen Sie zu, wie die Magie geschieht, wenn Spenden eingehen und Ihr Baum sich mit
+                                    Ornamenten füllt. Es ist eine fesselnde und herzerwärmende Art, den Echtzeiteffekt
+                                    wachsen zu sehen.{" "}
                                 </p>
                             </div>
                         </div>
@@ -324,18 +332,18 @@ export default function Home() {
                     <QuestionClicker
                         data={{
                             questions: [
-                                "Environmental Organizations",
-                                "Nature Enthusiasts",
-                                "Schools and Educational Institutions",
-                                "Corporate Social Responsibility (CSR) Programs",
-                                "Community and Neighborhood Groups",
+                                "Gemeinnützige Organisationen",
+                                "Individuelle Fundraiser",
+                                "Unternehmen und Konzerne",
+                                "Schulen und Bildungseinrichtungen",
+                                "Gemeinschafts- und Sozialgruppen",
                             ],
                             answers: [
                                 "Gemeinnützige Organisationen können unsere Plattform nutzen, um ansprechende Fundraising-Kampagnen zu erstellen.Sie können sich problemlos mit ihren Unterstützern vernetzen, ihre Anliegen präsentieren und Spenden sammeln, während sie Weihnachtsfreude verbreiten.",
-                                "Nature enthusiasts are individuals who deeply value the beauty and importance of the natural world. They often seek out opportunities to actively contribute to environmental causes. Your project can capture their attention and inspire them to make a difference. Highlight the personal connection they can establish by selecting the placement of their tree donations. Emphasize the positive impact that their contributions will have on preserving and restoring ecosystems. Engaging with nature-focused communities, such as outdoor enthusiasts, hikers, and nature photographers, can further enhance the reach and impact of your platform.",
-                                "Schools and educational institutions provide an ideal platform to promote environmental awareness and engage students in meaningful activities. Collaborating with them allows you to integrate your tree donation project into their curriculum or extracurricular programs. By demonstrating the educational value of tree planting and the importance of environmental stewardship, you can inspire and empower the next generation to become environmental advocates. Create tailored resources for educators, such as lesson plans or workshops, to facilitate their involvement in the project. Additionally, consider organizing tree planting events or competitions specifically targeting students, fostering a sense of responsibility and connection to the environment.",
-                                "Many businesses and corporations recognize the importance of incorporating sustainability into their operations. CSR programs offer opportunities for companies to align their values with impactful initiatives. Position your tree donation project as a CSR solution, emphasizing the positive environmental outcomes and employee engagement opportunities. Present case studies showcasing the social and environmental benefits of corporate tree planting campaigns. Collaborate with businesses to design customized programs that align with their sustainability goals, creating a win-win scenario where they contribute to tree planting efforts while enhancing their brand reputation.",
-                                "Community and neighborhood groups often have a strong sense of pride and attachment to their local environment. Collaborate with these groups to engage residents in improving their surroundings through tree planting initiatives. Facilitate communication channels where community members can collectively decide on tree placement within their neighborhoods. Organize volunteer events and workshops to educate residents about the benefits of tree planting and provide them with the necessary knowledge and resources. Building a sense of ownership and involvement among community members will foster a stronger connection to the project and encourage long-term participation.",
+                                "Einzelpersonen, die Gelder für persönliche Anliegen wie medizinische Ausgaben oder Gemeinschaftsprojekte sammeln möchten, können unsere Plattform nutzen, um ein individuelles Spenderlebnis zu schaffen. Damit haben sie die Möglichkeit, Unterstützung aus ihrem Netzwerk effektiv zu mobilisieren.",
+                                "Unternehmen können unsere Plattform für Initiativen zur sozialen Verantwortung von Unternehmen (Corporate Social Responsibility, CSR) nutzen. Sie können ihre Marke mit wohltätigen Zwecken in Einklang bringen, Mitarbeiter zur Unterstützung sozialer Projekte motivieren und ihr Engagement für soziale Wirkung während der Feiertagssaison unterstreichen.",
+                                "Bildungseinrichtungen können unsere Plattform für Fundraising-Kampagnen verwenden. Sie bietet eine kreative Möglichkeit für Schulen, Gelder für außerschulische Aktivitäten, Bildungsprojekte oder Stipendien zu sammeln und dabei Schüler und Eltern in den Prozess einzubeziehen.",
+                                "Soziale Vereine, Nachbarschaftsverbände und Gemeinschaftsgruppen können von unserer Plattform profitieren, um ein Gefühl der Zusammengehörigkeit zu fördern und lokale Anliegen zu unterstützen. Sie bietet eine interaktive und kollaborative Möglichkeit, zum Wohl der Gemeinschaft beizutragen",
                             ],
                         }}
                     ></QuestionClicker>
@@ -433,7 +441,7 @@ export default function Home() {
                         Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was am
                         wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
                     </h2>
-                    <MainButton klasse="mt-8" link={"https://tree-donator.vercel.app"}>
+                    <MainButton klasse="mt-8" link={"#"}>
                         DEMO
                     </MainButton>
                 </div>
@@ -461,10 +469,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-6 p-8 md:p-16 flex flex-col justify-end pb-24">
-                        <h2 className="font-work text-3xl font-bold text-white leading-tight ">Contact us!</h2>
+                        <h2 className="font-work text-3xl font-bold text-white leading-tight ">Schreiben Sie uns!</h2>
                         <div className="w-full md:w-2/3">
                             <p className="mt-8 font-work text-lg mb-16">
-                                Interested in out software? <br></br> Contact us, we will reply swiftly!
+                                Interesse an unserem System? <br></br> Schreiben Sie uns, wir melden uns umgehend!
                             </p>
                             <Form1></Form1>
                         </div>

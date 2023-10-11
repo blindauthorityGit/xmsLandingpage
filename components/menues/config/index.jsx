@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const menuItems = [
     {
-        title: "Why",
+        title: "Worum geht es",
         slug: "#why",
         subMenu: false,
         subMenuItems: [
@@ -26,23 +26,14 @@ const menuItems = [
         ],
     },
     {
-        title: "Our Solution",
+        title: "wie funktioniert es",
         slug: "#solution",
         subMenu: false,
     },
+
     {
-        title: "Who is it for",
-        slug: "#who",
-        subMenu: false,
-    },
-    {
-        title: "Features",
+        title: "beispiele",
         slug: "#features",
-        subMenu: false,
-    },
-    {
-        title: "Contact",
-        slug: "#contact",
         subMenu: false,
     },
 ];

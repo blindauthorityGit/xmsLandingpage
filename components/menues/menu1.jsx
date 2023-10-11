@@ -230,7 +230,7 @@ const Menu1 = (props) => {
                             </a>
                         </div>
                         <div className="hidden lg:flex ">
-                            <MainButton link={"https://tree-donator.vercel.app"}>DEMO</MainButton>
+                            <MainButton link={"#"}>DEMO</MainButton>
                             {/* {props.socialMedia.map((e, i) => {
                                 return (
                                     <a
