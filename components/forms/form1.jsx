@@ -25,7 +25,8 @@ const Form1 = (props) => {
         let config = {
             method: "post",
             // url: `http://localhost:3000/api/contact`,
-            url: `/api/${props.contact ? "contact" : "reseller"}`,
+            // url: `/api/${props.contact ? "contact" : "reseller"}`,
+            url: `/api/contact`,
             headers: {
                 "Content-Type": "application/json",
             },
@@ -121,9 +122,7 @@ const Form1 = (props) => {
                         </div>
                     ) : (
                         <div className="w-full col-span-12">
-                            <MainButton link={"#"} type="submit">
-                                Send
-                            </MainButton>
+                            <button type="submit">Send</button>
                             {/* <button
                                 className="bg-primaryColor-700 mt-6 font-semibold hover-underline-animation z-20 flex items-center justify-center text-primaryColor-200 lg:mt-8 py-2 text-sm sm:text-base sm:py-3 px-6 min-w-[10rem] w-full uppercase rounded-md md:mt-8"
                                 type="submit"
