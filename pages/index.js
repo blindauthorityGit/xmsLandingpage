@@ -437,7 +437,7 @@ export default function Home() {
                         Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was am
                         wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
                     </h2>
-                    <MainButton klasse="mt-8" link={"#"}>
+                    <MainButton klasse="mt-8" link={"https://xms.sabocon.com"}>
                         DEMO
                     </MainButton>
                 </div>

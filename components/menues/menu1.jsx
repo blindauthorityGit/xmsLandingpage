@@ -230,7 +230,7 @@ const Menu1 = (props) => {
                             </a>
                         </div>
                         <div className="hidden lg:flex ">
-                            <MainButton link={"#"}>DEMO</MainButton>
+                            <MainButton link={"https://xms.sabocon.com"}>DEMO</MainButton>
                             {/* {props.socialMedia.map((e, i) => {
                                 return (
                                     <a
