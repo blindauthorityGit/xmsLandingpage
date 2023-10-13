@@ -32,6 +32,9 @@ import HeroImg from "../assets/hero.jpg";
 import Img1 from "../assets/1.jpg";
 import Img2 from "../assets/2.jpg";
 import Img3 from "../assets/3.jpg";
+import Img4 from "../assets/4.jpg";
+import Img5 from "../assets/5.jpg";
+import Img6 from "../assets/6.jpg";
 
 import Screenshot from "../assets/screenshot.jpg";
 import ContactTrees from "../assets/contact.png";
@@ -348,7 +351,7 @@ export default function Home() {
                 <div className="w-full bg-darkColor-500 col-span-12 py-16 md:py-24 mt-16 md:mt-36 " id="features">
                     <div className="second col-span-12 grid grid-cols-12 container mx-auto">
                         <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">Beispiele</h2>
-                        <SwiperComp data={[Img1, Img2, Img3, Img1, Img2, Img3]}></SwiperComp>
+                        <SwiperComp data={[Img1, Img2, Img3, Img4, Img5, Img6]}></SwiperComp>
                         {/* <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
                             <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
                                 Beispiele
