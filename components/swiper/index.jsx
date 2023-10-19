@@ -28,16 +28,16 @@ const SwiperComp = (props) => {
 
     return (
         <div className="col-span-12 relative h-full">
-            <div className="swiper-custom-navigation absolute h-full w-full z-50">
+            <div className="swiper-custom-navigation absolute h-full w-full ">
                 <button
                     onClick={goPrev}
-                    className="swiper-custom-prev-button text-3xl text-white absolute left-0 lg:left-[-2rem] top-1/2 transform -translate-y-1/2"
+                    className="swiper-custom-prev-button z-50 text-3xl text-white absolute left-0 lg:left-[-2rem] top-1/2 transform -translate-y-1/2"
                 >
                     <FaChevronLeft />
                 </button>
                 <button
                     onClick={goNext}
-                    className="swiper-custom-next-button text-3xl text-white absolute right-0 lg:right-[-2rem] top-1/2 transform -translate-y-1/2"
+                    className="swiper-custom-next-button z-50 text-3xl text-white absolute right-0 lg:right-[-2rem] top-1/2 transform -translate-y-1/2"
                 >
                     <FaChevronRight />
                 </button>
