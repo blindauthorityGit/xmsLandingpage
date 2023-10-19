@@ -13,6 +13,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import SwiperComp from "../components/swiper";
 import { MainButton } from "../components/buttons";
+import Link from "next/link";
 
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -118,7 +119,7 @@ export default function Home() {
                             Ihnen am Herzen liegen.
                         </p>
                         <p className="font-work text-lg text-whiteText">
-                            Schließen Sie sich uns an und verbreiten Sie Freude, Ornament für Ornament.
+                            Schließen Sie sich uns an und verbreiten Sie Freude.
                         </p>
                     </div>
                     <div
@@ -267,7 +268,7 @@ export default function Home() {
                     </div>
 
                     <div className="second lg:mt-16 col-span-12 text-center">
-                        <h2 className="font-work text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor lg:leading-loose">
+                        <h2 className="font-work text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor ">
                             Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was
                             am wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
                         </h2>
@@ -437,9 +438,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="second mt-16 col-span-12 text-center container mx-auto">
-                    <h2 className="font-work mb-12 text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor leading-loose">
-                        Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was am
-                        wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
+                    <h2 className="font-work mb-12 text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor ">
+                        Unser System ist vielseitig und flexibel einsetzbar und somit ein wertvolles Werkzeug für
+                        verschiedene Kunden, die in der Weihnachtszeit und darüber hinaus positive Veränderungen
+                        bewirken möchten.{" "}
                     </h2>
                     <MainButton klasse="mt-8" link={"https://xms.sabocon.com"}>
                         DEMO
@@ -478,14 +480,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="col-span-12 flex justify-center mb-36">
-                    <a
-                        className="text-white underline hover:text-primaryColor-800"
-                        href="https://tree-donator.vercel.app"
-                    >
-                        Check out our DEMO
-                    </a>
-                </div> */}
+                <div className="col-span-12 flex justify-center mb-36">
+                    <Link className="text-white underline hover:text-primaryColor-800" href="/impressum">
+                        <span className="text-white">Impressum</span>
+                    </Link>
+                </div>
             </div>
         </MainContainer>
     );

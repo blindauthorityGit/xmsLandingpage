@@ -44,3 +44,12 @@ background: linear-gradient(0deg, rgba(10,33,52,1) 0%, rgba(24,61,103,1) 21%, rg
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0a2134",endColorstr="#15305d",GradientType=1);
 
   }
+
+  .swiper-pagination > .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px
+  }
+
+  .swiper-pagination > .swiper-pagination-bullet-active {
+   background: #f57277;
+  }

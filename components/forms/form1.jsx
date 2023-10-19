@@ -36,10 +36,14 @@ const Form1 = (props) => {
         try {
             const response = await axios(config);
             setLoading(false);
-            setSuccess(true);
-            console.log(response);
+            if (response.status === 200) {
+                setSuccess(true);
+                console.log("Email sent successfully");
+            } else {
+                console.log("Email not sent. Unexpected status code: ", response.status);
+            }
         } catch (err) {
-            console.log(err);
+            console.error("Error sending email: ", err);
         }
     }
     return (
@@ -122,7 +126,9 @@ const Form1 = (props) => {
                         </div>
                     ) : (
                         <div className="w-full col-span-12">
-                            <button type="submit">Send</button>
+                            <button type="submit" className="bg-white px-16 py-4 rounded-full font-bold">
+                                Abschicken
+                            </button>
                             {/* <button
                                 className="bg-primaryColor-700 mt-6 font-semibold hover-underline-animation z-20 flex items-center justify-center text-primaryColor-200 lg:mt-8 py-2 text-sm sm:text-base sm:py-3 px-6 min-w-[10rem] w-full uppercase rounded-md md:mt-8"
                                 type="submit"
@@ -132,7 +138,7 @@ const Form1 = (props) => {
                         </div>
                     )}
                 </form>
-                {success ? <div className="text-primaryColor w-96 mt-4">Vielen Dank für Ihre Nachricht!</div> : ""}
+                {success ? <div className="text-green-100 w-96 mt-4">Vielen Dank für Ihre Nachricht!</div> : ""}
             </div>
             <div className="col-span-12 lg:col-span-4 grid grid-cols-12">{props.children}</div>
         </MainContainer>

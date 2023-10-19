@@ -1,16 +1,16 @@
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (to, subject, html, email) => {
-    console.log(process.env.NEXT_DEV);
+    console.log(process.env.NEXT_DEV, process.env.NEXT_DEV == "true");
+    console.log(process.env.NEXT_GMAIL_PASSWORD, process.env.NEXT_PASSWORD_PIZ);
     try {
         // create a transporter object
         const transporter = nodemailer.createTransport({
-            host: process.env.NEXT_DEV == "true" ? "smtp.gmail.com" : "smtp.world4you.com",
-            port: process.env.NEXT_DEV == "true" ? 465 : 587,
-            secure: false,
+            host: "smtp.gmail.com",
+            port: 465, // Use the SSL port
             auth: {
-                user: process.env.NEXT_DEV == "true" ? process.env.NEXT_USER : process.env.NEXT_W4YUSER,
-                pass: process.env.NEXT_DEV == "true" ? process.env.NEXT_PASSWORD_PIZ : process.env.NEXT_W4YPASSWORD,
+                user: process.env.NEXT_USER, // Your Gmail email address
+                pass: process.env.NEXT_GMAIL_PASSWORD, // App Password you generated for your Gmail account
             },
         });
 
@@ -42,7 +42,7 @@ export default async (req, res) => {
         `;
 
         // send the email
-        await sendEmail("office@baeckerin.at", `Email von ${name}`, html, email);
+        await sendEmail("office@atelierbuchner.at", `Email XMS Donate von ${name}`, html, email);
 
         // return success response
         res.status(200).json(req.body);
