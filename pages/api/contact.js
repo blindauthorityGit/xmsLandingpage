@@ -42,7 +42,7 @@ export default async (req, res) => {
         `;
 
         // send the email
-        await sendEmail("office@atelierbuchner.at", `Email XMS Donate von ${name}`, html, email);
+        await sendEmail("contact@sabocon.com", `Email XMS Donate von ${name}`, html, email);
 
         // return success response
         res.status(200).json(req.body);
