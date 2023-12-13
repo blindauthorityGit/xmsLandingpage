@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 const menuItems = [
     {
         title: "Worum geht es",
+        titleEN: "What is it",
         slug: "#why",
         subMenu: false,
         subMenuItems: [
@@ -27,12 +28,16 @@ const menuItems = [
     },
     {
         title: "wie funktioniert es",
+        titleEN: "How does it work",
+
         slug: "#solution",
         subMenu: false,
     },
 
     {
         title: "beispiele",
+        titleEN: "examples",
+
         slug: "#features",
         subMenu: false,
     },

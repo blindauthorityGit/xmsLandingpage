@@ -180,7 +180,7 @@ const Menu1 = (props) => {
                                     >
                                         <Link href={`/${e.slug}`}>
                                             <a className="flex items-end uppercase text-base lg:text-xs xl:text-lg">
-                                                {e.title}{" "}
+                                                {props.lang == "en" ? e.titleEN : e.title}
                                                 {e.subMenu ? (
                                                     <motion.span variants={pfeilMotion}>
                                                         <BiChevronDown></BiChevronDown>
@@ -202,7 +202,7 @@ const Menu1 = (props) => {
                                                         >
                                                             <Link href={`${e.external ? "" : "/"}${e.slug}`}>
                                                                 <a className="hover:text-red-500 font-semibold">
-                                                                    {e.title}
+                                                                    {props.lang == "en" ? e.titleEN : e.title}
                                                                 </a>
                                                             </Link>
                                                             <hr className="mt-1" />
@@ -229,8 +229,16 @@ const Menu1 = (props) => {
                                 DEMO
                             </a>
                         </div>
+
                         <div className="hidden lg:flex ">
                             <MainButton link={"https://xms.sabocon.com"}>DEMO</MainButton>
+                            <div
+                                className="text-white ml-4 pt-2 cursor-pointer hover:scale-110"
+                                onClick={props.language}
+                            >
+                                {props.english}
+                            </div>
+
                             {/* {props.socialMedia.map((e, i) => {
                                 return (
                                     <a

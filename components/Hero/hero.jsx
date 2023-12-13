@@ -24,22 +24,19 @@ const Hero = (props) => {
             <div className="text z-10 pt-0 lg:pt-0 font-work px-8 lg:px-0 col-span-12 lg:col-span-4 lg:pl-24">
                 <h1 className="text-4xl xl:text-8xl font-black text-accentColor-50 uppercase">
                     <div data-aos="zoom-in-left" data-aos-delay="300" className="text-accentColor-400">
-                        Spenden,
+                        {props.headline1}
                     </div>
 
                     <div data-aos="zoom-in-right" data-aos-delay="500">
                         {" "}
-                        Dekorieren,
+                        {props.headline2}
                     </div>
                     <div data-aos="zoom-in-right" data-aos-delay="500" className="text-accentColor-400">
-                        {" "}
-                        Hoffnung schenken
+                        {props.headline3}
                     </div>
                 </h1>
                 <div className="w-full mt-8 lg:mt-16" data-aos="zoom-in-up" data-aos-delay="700">
-                    <h3 className="font-work text-whiteText text-lg lg:text-2xl font-semibold">
-                        Lassen Sie Ihre Spende auf unserem virtuellen Spendenbaum erstrahlen
-                    </h3>
+                    <h3 className="font-work text-whiteText text-lg lg:text-2xl font-semibold">{props.subLine}</h3>
                     {/* <MainButton accent link={"/#contact"}>
                         Contact us
                     </MainButton> */}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Image from "next/image";
@@ -45,13 +46,32 @@ import ContactTrees from "../assets/contact.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//CONFIG
+import config from "../config";
+
 export default function Home() {
+    const router = useRouter();
+
     const [trees, setTrees] = useState(345);
+    const [lan, setLang] = useState(null);
+
+    useEffect(() => {
+        // Parse the language from the query parameter
+        const { lang: queryLang } = router.query;
+        console.log(router.query);
+        if (queryLang) {
+            // If the lang query parameter is provided, set the language
+            setLang(queryLang);
+        }
+    }, [router.query]);
 
     useEffect(() => {
         AOS.init({
             duration: 400,
         });
+        setLang(config.defaultLanguage);
+        console.log(config.defaultLanguage);
+        console.log(config.mainHeader.de.one);
     }, []);
 
     useEffect(() => {
@@ -93,33 +113,43 @@ export default function Home() {
                 socialMedia={socialMedia}
                 burgerIcon={<RxHamburgerMenu />}
                 onBurgerClick={(e) => {}}
+                language={() => {
+                    console.log(lan);
+                    setLang((prevLang) => (prevLang === "de" ? "en" : "de"));
+                }}
+                lang={lan}
+                english={lan == "de" ? "EN" : "DE"}
                 onClick={() => {
+                    console.log(english);
                     setIsOpen(true);
                 }}
             ></Menu1>
-            <Hero fullHeight={true} colspan="col-span-12"></Hero>
+            <Hero
+                fullHeight={true}
+                headline1={lan == "de" ? config.mainHeader.de.one : config.mainHeader.en.one}
+                headline2={lan == "de" ? config.mainHeader.de.two : config.mainHeader.en.two}
+                headline3={lan == "de" ? config.mainHeader.de.three : config.mainHeader.en.three}
+                subLine={lan == "de" ? config.mainHeader.de.subline : config.mainHeader.en.subline}
+                colspan="col-span-12"
+            ></Hero>
             <div className="w-full col-span-12 " id="why">
                 <div className="container mx-auto grid grid-cols-12 relative">
                     {/* //FIRST */}
                     <div className="first col-span-12 lg:col-span-6 px-8 mt-16 mb-16 lg:pr-24">
                         <h2 className="font-work text-3xl md:px-0 md:text-5xl font-bold text-accentColor leading-tight ">
-                            <span className="text-primaryColor">Deine Charity, dein Baum, deine Wirkung</span>
+                            <span className="text-primaryColor">
+                                {" "}
+                                {lan == "de" ? config.sectionOne.de.headline : config.sectionOne.en.headline}
+                            </span>
                         </h2>
                         <p className="font-work text-lg text-whiteText mt-16 mb-8">
-                            Willkommen auf unserer Spendenplattform zur Weihnachtszeit, wo der Geist der Großzügigkeit
-                            auf die Magie der Saison trifft. Mit unserer einzigartigen Web-App haben Sie die
-                            Möglichkeit, einen Unterschied zu bewirken, der ebenso persönlich wie bedeutsam ist. Sie
-                            wählen die Wohltätigkeitsorganisation aus, die Ihr Herz berührt, und wir gestalten einen
-                            wunderschönen virtuellen Weihnachtsbaum nur für Sie.
+                            {lan == "de" ? config.sectionOne.de.one : config.sectionOne.en.one}
                         </p>
                         <p className="font-work text-lg text-whiteText mt-16 mb-8">
-                            Dann laden Sie Besucher ein, Ihren Baum mit digitalen Ornamenten zu schmücken, die ihre
-                            Spenden repräsentieren. Es ist eine herzerwärmende Möglichkeit, Ihre Gemeinschaft
-                            zusammenzubringen, die Saison zu feiern und echte Wirkung für die Anliegen zu erzielen, die
-                            Ihnen am Herzen liegen.
+                            {lan == "de" ? config.sectionOne.de.two : config.sectionOne.en.two}
                         </p>
                         <p className="font-work text-lg text-whiteText">
-                            Schließen Sie sich uns an und verbreiten Sie Freude.
+                            {config.sectionOne[lan === "en" ? "en" : "de"].three}
                         </p>
                     </div>
                     <div
@@ -133,22 +163,23 @@ export default function Home() {
                         <div className="col-span-12 lg:col-span-4">
                             <div className="rounded-2xl font-work ">
                                 <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
-                                    Individuelle Spenden
+                                    {config.sectionTwo[lan === "en" ? "en" : "de"].one.headline}
                                 </div>
                                 <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
-                                    <strong>Maßgeschneidertes Wohltätigkeitserlebnis</strong>
+                                    <strong>{config.sectionTwo[lan === "en" ? "en" : "de"].one.subline}</strong>
                                     <ul className="list-disc mt-8">
-                                        <li className="mb-4">Wählen Sie die Charity, die Ihnen am wichtigsten ist</li>
                                         <li className="mb-4">
-                                            Wir erstellen einen einzigartigen virtuellen Weihnachtsbaum speziell für
-                                            Ihre Sache
+                                            {" "}
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].one.one}
                                         </li>
                                         <li className="mb-4">
-                                            Passen Sie den Baum mit den Farben und dem Branding Ihrer
-                                            Wohltätigkeitsorganisation an
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].one.two}
                                         </li>
                                         <li className="mb-4">
-                                            Gestalten Sie Ihre Spendenreise persönlich und herzlich
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].one.three}
+                                        </li>
+                                        <li className="mb-4">
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].one.four}
                                         </li>
                                     </ul>
                                 </div>
@@ -158,24 +189,23 @@ export default function Home() {
                             {" "}
                             <div className="rounded-2xl font-work ">
                                 <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
-                                    Interaktives Spenden
+                                    {config.sectionTwo[lan === "en" ? "en" : "de"].two.headline}
                                 </div>
                                 <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
-                                    <strong>Beziehen Sie Ihre Gemeinschaft mit ein</strong>
+                                    <strong>{config.sectionTwo[lan === "en" ? "en" : "de"].two.subline}</strong>
                                     <ul className="list-disc mt-8">
                                         <li className="mb-4">
-                                            Laden Sie Freunde, Familie und Kollegen ein, Ihren Baum zu schmücken
+                                            {" "}
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].two.one}
                                         </li>
                                         <li className="mb-4">
-                                            Jedes Ornament repräsentiert eine Spende für Ihre ausgewählte
-                                            Wohltätigkeitsorganisation
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].two.two}
                                         </li>
                                         <li className="mb-4">
-                                            Sehen Sie zu, wie der Baum zum Leben erwacht, wenn weitere Ornamente
-                                            hinzugefügt werden
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].two.three}
                                         </li>
                                         <li className="mb-4">
-                                            Verwandeln Sie das Geben in ein gemeinsames, interaktives Erlebnis
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].two.four}
                                         </li>
                                     </ul>
                                 </div>
@@ -185,25 +215,23 @@ export default function Home() {
                             {" "}
                             <div className="rounded-2xl font-work ">
                                 <div className="top py-8 px-16 bg-primaryColor-400 rounded-t-2xl text-2xl text-white font-bold">
-                                    Echte Wirkung
+                                    {config.sectionTwo[lan === "en" ? "en" : "de"].three.headline}
                                 </div>
                                 <div className="top py-8 px-16 bg-whiteText rounded-b-2xl">
-                                    <strong>Verwandeln Sie Spenden in Ergebnisse</strong>
+                                    <strong>{config.sectionTwo[lan === "en" ? "en" : "de"].three.subline}</strong>
                                     <ul className="list-disc mt-8">
                                         <li className="mb-4">
-                                            Jedes Ornament symbolisiert echte finanzielle Unterstützung für Ihre Sache
+                                            {" "}
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].three.one}
                                         </li>
                                         <li className="mb-4">
-                                            Verfolgen Sie Spenden in Echtzeit und sehen Sie, wie der kollektive Einfluss
-                                            wächst.
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].three.two}
                                         </li>
                                         <li className="mb-4">
-                                            Verstärken Sie die Mission Ihrer Wohltätigkeitsorganisation mit der Kraft
-                                            des gemeinsamen Gebens
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].three.three}
                                         </li>
                                         <li className="mb-4">
-                                            Schaffen Sie einen greifbaren Unterschied und bringen Sie Ihre Sache zum
-                                            Leben
+                                            {config.sectionTwo[lan === "en" ? "en" : "de"].three.four}
                                         </li>
                                     </ul>
                                 </div>
@@ -221,14 +249,12 @@ export default function Home() {
                             <div className="holder flex items-center">
                                 <span className="text-primaryColor text-8xl font-bold mr-8">1.</span>
                                 <div className="text text-whiteText text-4xl tracking-wider font-semibold">
-                                    Wählen Sie eine Charity
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].one.headline}
                                 </div>
                             </div>
                             <div className="descr lg:pl-36">
                                 <p className="font-work text-lg text-whiteText mt-8 mb-8">
-                                    Wählen Sie die Wohltätigkeitsorganisation, die einen besonderen Platz in Ihrem
-                                    Herzen hat. Ob es sich um eine lokale Organisation oder eine globale Angelegenheit
-                                    handelt, Ihre Wahl ist der erste Schritt, um einen Unterschied zu machen.
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].one.one}
                                 </p>
                             </div>
                         </div>
@@ -236,16 +262,12 @@ export default function Home() {
                             <div className="holder flex items-center">
                                 <span className="text-primaryColor text-8xl font-bold mr-8">2.</span>
                                 <div className="text text-whiteText text-4xl tracking-wider font-semibold">
-                                    Gestalten Sie Ihren eigenen Baum
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].two.headline}
                                 </div>
                             </div>
                             <div className="descr lg:pl-36">
                                 <p className="font-work text-lg text-whiteText mt-8 mb-8">
-                                    Mit unserer fachkundigen Unterstützung gestalten Sie einen virtuellen
-                                    Weihnachtsbaum, der einzigartig Ihrer Sache gehört. Personalisieren Sie ihn mit den
-                                    Farben und dem Branding Ihrer Wohltätigkeitsorganisation. Legen Sie Spendenziele
-                                    fest, wählen Sie die Dauer der Kampagne aus, und lassen Sie uns die Bereitstellung
-                                    auf unseren sicheren Servern übernehmen.{" "}
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].two.one}
                                 </p>
                             </div>
                         </div>
@@ -253,15 +275,12 @@ export default function Home() {
                             <div className="holder flex items-center">
                                 <span className="text-primaryColor text-8xl font-bold mr-8">3.</span>
                                 <div className="text text-whiteText text-4xl tracking-wider font-semibold">
-                                    Sammeln Sie Spenden mit Freude
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].three.headline}
                                 </div>
                             </div>
                             <div className="descr lg:pl-36">
                                 <p className="font-work text-lg text-whiteText mt-8 mb-8">
-                                    Werben Sie für Ihren Baum und Ihre Kampagne bei Freunden, Familie und Unterstützern.
-                                    Sehen Sie zu, wie die Magie geschieht, wenn Spenden eingehen und Ihr Baum sich mit
-                                    Ornamenten füllt. Es ist eine fesselnde und herzerwärmende Art, den Echtzeiteffekt
-                                    wachsen zu sehen.{" "}
+                                    {config.sectionThree[lan === "en" ? "en" : "de"].three.one}
                                 </p>
                             </div>
                         </div>
@@ -269,8 +288,7 @@ export default function Home() {
 
                     <div className="second lg:mt-16 col-span-12 text-center">
                         <h2 className="font-work text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor ">
-                            Unsere Plattform vereinfacht den Prozess, damit Sie sich auf das konzentrieren können, was
-                            am wichtigsten ist: eine positive Veränderung für Ihre ausgewählte Sache zu bewirken.
+                            {config.sectionFour[lan === "en" ? "en" : "de"].text}
                         </h2>
                     </div>
                     {/* <div className="flex flex-wrap col-span-12 justify-evenly mt-12">
@@ -331,20 +349,21 @@ export default function Home() {
                     </div> */}
                     {/* //FOURTH */}
                     <QuestionClicker
+                        props={{ headline: config.sectionFive[lan === "en" ? "en" : "de"].headline }}
                         data={{
                             questions: [
-                                "Gemeinnützige Organisationen",
-                                "Individuelle Fundraiser",
-                                "Unternehmen und Konzerne",
-                                "Schulen und Bildungseinrichtungen",
-                                "Gemeinschafts- und Sozialgruppen",
+                                config.sectionFive[lan === "en" ? "en" : "de"].questions.one,
+                                config.sectionFive[lan === "en" ? "en" : "de"].questions.two,
+                                config.sectionFive[lan === "en" ? "en" : "de"].questions.three,
+                                config.sectionFive[lan === "en" ? "en" : "de"].questions.four,
+                                config.sectionFive[lan === "en" ? "en" : "de"].questions.five,
                             ],
                             answers: [
-                                "Gemeinnützige Organisationen können unsere Plattform nutzen, um ansprechende Fundraising-Kampagnen zu erstellen.Sie können sich problemlos mit ihren Unterstützern vernetzen, ihre Anliegen präsentieren und Spenden sammeln, während sie Weihnachtsfreude verbreiten.",
-                                "Einzelpersonen, die Gelder für persönliche Anliegen wie medizinische Ausgaben oder Gemeinschaftsprojekte sammeln möchten, können unsere Plattform nutzen, um ein individuelles Spenderlebnis zu schaffen. Damit haben sie die Möglichkeit, Unterstützung aus ihrem Netzwerk effektiv zu mobilisieren.",
-                                "Unternehmen können unsere Plattform für Initiativen zur sozialen Verantwortung von Unternehmen (Corporate Social Responsibility, CSR) nutzen. Sie können ihre Marke mit wohltätigen Zwecken in Einklang bringen, Mitarbeiter zur Unterstützung sozialer Projekte motivieren und ihr Engagement für soziale Wirkung während der Feiertagssaison unterstreichen.",
-                                "Bildungseinrichtungen können unsere Plattform für Fundraising-Kampagnen verwenden. Sie bietet eine kreative Möglichkeit für Schulen, Gelder für außerschulische Aktivitäten, Bildungsprojekte oder Stipendien zu sammeln und dabei Schüler und Eltern in den Prozess einzubeziehen.",
-                                "Soziale Vereine, Nachbarschaftsverbände und Gemeinschaftsgruppen können von unserer Plattform profitieren, um ein Gefühl der Zusammengehörigkeit zu fördern und lokale Anliegen zu unterstützen. Sie bietet eine interaktive und kollaborative Möglichkeit, zum Wohl der Gemeinschaft beizutragen",
+                                config.sectionFive[lan === "en" ? "en" : "de"].answers.one,
+                                config.sectionFive[lan === "en" ? "en" : "de"].answers.two,
+                                config.sectionFive[lan === "en" ? "en" : "de"].answers.three,
+                                config.sectionFive[lan === "en" ? "en" : "de"].answers.four,
+                                config.sectionFive[lan === "en" ? "en" : "de"].answers.five,
                             ],
                         }}
                     ></QuestionClicker>
@@ -352,7 +371,10 @@ export default function Home() {
                 </div>{" "}
                 <div className="w-full bg-darkColor-500 col-span-12 py-16 md:py-24 mt-16 md:mt-36 " id="features">
                     <div className="second col-span-12 grid grid-cols-12 container mx-auto">
-                        <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">Beispiele</h2>
+                        <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
+                            {" "}
+                            {config.sectionSix[lan === "en" ? "en" : "de"].text}
+                        </h2>
                         <SwiperComp data={[Img1, Img2, Img3, Img4, Img5, Img6, Img7]}></SwiperComp>
                         {/* <div className="col-span-12 px-8 md:px-0 md:col-span-6 relative md:pr-24">
                             <h2 className="font-work text-6xl mb-8 font-bold text-accentColor leading-tight ">
@@ -439,9 +461,7 @@ export default function Home() {
                 </div>
                 <div className="second mt-16 col-span-12 text-center container mx-auto">
                     <h2 className="font-work mb-12 text-3xl px-8 md:px-0 md:text-5xl font-bold text-accentColor ">
-                        Unser System ist vielseitig und flexibel einsetzbar und somit ein wertvolles Werkzeug für
-                        verschiedene Kunden, die in der Weihnachtszeit und darüber hinaus positive Veränderungen
-                        bewirken möchten.{" "}
+                        {config.sectionSeven[lan === "en" ? "en" : "de"].text}
                     </h2>
                     <MainButton klasse="mt-8" link={"https://xms.sabocon.com"}>
                         DEMO
@@ -471,10 +491,12 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="col-span-12 md:col-span-6 p-8 md:p-16 flex flex-col justify-end pb-24">
-                        <h2 className="font-work text-3xl font-bold text-white leading-tight ">Schreiben Sie uns!</h2>
+                        <h2 className="font-work text-3xl font-bold text-white leading-tight ">
+                            {config.sectionEight[lan === "en" ? "en" : "de"].headline}
+                        </h2>
                         <div className="w-full md:w-2/3">
                             <p className="mt-8 font-work text-lg mb-16">
-                                Interesse an unserem System? <br></br> Schreiben Sie uns, wir melden uns umgehend!
+                                {config.sectionEight[lan === "en" ? "en" : "de"].text}
                             </p>
                             <Form1></Form1>
                         </div>
